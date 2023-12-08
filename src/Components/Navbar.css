@@ -1,0 +1,35 @@
+.navCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #0072ce;
+  height: 50px;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  color: white;
+  font-weight: 800;
+}
+
+.basketImg {
+  height: 30px;
+}
+
+.navImg {
+  margin-left: 10px;
+  height: 30px;
+  padding-bottom: 1px;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navItem {
+  margin-top: 3px;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
+}
