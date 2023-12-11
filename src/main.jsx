@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home";
+import Basket from "./Basket";
 import Store from "./Store";
 import "./index.css";
 
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "store",
     element: <Store />,
+  },
+  {
+    path: "basket",
+    element: <Basket />,
   },
 ]);
 

@@ -3,7 +3,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -29,10 +28,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.splashCont {
-  margin-top: 200px;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -44,4 +39,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+#root {
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding-left: 3.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.splashCont {
+  margin-top: 200px;
 }

@@ -1,12 +1,8 @@
-import { useState } from "react";
 import logo from "./assets/contactalogo.png";
 import Navbar from "./Components/Navbar.jsx";
-
-import "./App.css";
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [total, setTotal] = useState(0);
-
   return (
     <>
       <Navbar />
@@ -17,9 +13,11 @@ function Home() {
           </a>
         </div>
         <h1>Shopping Cart Test</h1>
-        <button className="visitButton">
-          Click here to visit the product page
-        </button>
+        <Link to="/store">
+          <button className="visitButton">
+            Click here to visit the product page
+          </button>
+        </Link>
       </div>
     </>
   );

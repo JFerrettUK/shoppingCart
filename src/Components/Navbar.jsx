@@ -4,23 +4,27 @@ import contactaWhite from "../assets/contactaWhite.png";
 import { Link } from "react-router-dom"; // Add this import statement
 
 const Navbar = () => {
-  console.log("confirm navBar runs");
   return (
     <div className="navCont">
-      <img src={contactaWhite} className="navImg"></img>
+      <Link to="/" className="navItem">
+        <img src={contactaWhite} className="navImg"></img>{" "}
+      </Link>
+
       <div className="navItems">
         <Link to="/" className="navItem">
           Home
         </Link>
         <Link to="/store" className="navItem">
           Store
+        </Link>
+        <Link to="/basket" className="basketLink">
+          <img
+            src={basket}
+            className="basketImg"
+            alt="shopping basket"
+            style={{ paddingRight: "15px" }}
+          />
         </Link>{" "}
-        <img
-          src={basket}
-          className="basketImg"
-          alt="shopping basket"
-          style={{ paddingRight: "10px" }}
-        />
       </div>
     </div>
   );

@@ -5,8 +5,8 @@
   overflow: hidden;
   background-color: #0072ce;
   height: 50px;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+  position: fixed;
+  top: 0;
   width: 100%;
   color: white;
   font-weight: 800;
@@ -25,7 +25,7 @@
 .navItems {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .navItem {
