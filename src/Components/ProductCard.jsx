@@ -3,7 +3,14 @@
 import { useState, useEffect } from "react";
 import "./ProductCard.css";
 
-const ProductCard = ({ name, description, price, imageSource }) => {
+const ProductCard = ({
+  name,
+  description,
+  price,
+  imageSource,
+  basket,
+  setBasket,
+}) => {
   const [quantity, setQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [item, setItem] = useState({ name, description, price, imageSource });
@@ -24,6 +31,10 @@ const ProductCard = ({ name, description, price, imageSource }) => {
     setQuantity(quantity + 1);
   };
 
+  const addToCart = () => {
+    console.log(basket);
+  };
+
   return (
     <div className="product-card">
       <div className="imgCont">
@@ -41,10 +52,7 @@ const ProductCard = ({ name, description, price, imageSource }) => {
           +
         </button>
       </div>
-      <button
-        className="addToCart"
-        onClick={() => console.log(`Add to cart ${name} clicked`)}
-      >
+      <button className="addToCart" onClick={addToCart}>
         Add to cart
       </button>
     </div>

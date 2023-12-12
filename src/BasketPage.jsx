@@ -1,6 +1,6 @@
 import Navbar from "./Components/Navbar.jsx";
 
-function Basket() {
+function BasketPage() {
   return (
     <>
       <Navbar />
@@ -8,4 +8,4 @@ function Basket() {
   );
 }
 
-export default Basket;
+export default BasketPage;

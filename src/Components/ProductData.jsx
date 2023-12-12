@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
 
 const ProductData = () => {
-  const [imageURL, setImageURL] = useState(null);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setImageURL(data[0].image))
+      .then((data) => setProducts(data))
       .catch((error) => console.error(error));
   }, []);
 
-  // Expose the fetched data (imageURL) for external use
-  return imageURL;
+  return products;
 };
 
 export default ProductData;
