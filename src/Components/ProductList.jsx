@@ -7,7 +7,11 @@ const ProductList = ({ basket, setBasket }) => {
   const products = ProductData();
 
   if (!products || !products.length) {
-    return <div>Loading...</div>;
+    return (
+      <div className="product-list">
+        <div>Loading...</div>;{" "}
+      </div>
+    );
   }
 
   return (

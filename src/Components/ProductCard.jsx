@@ -32,8 +32,25 @@ const ProductCard = ({
   };
 
   const addToCart = () => {
-    console.log(basket);
+    const itemIndexInBasket = basket.findIndex(
+      (basketItem) => basketItem.id === item.id
+    );
+
+    if (itemIndexInBasket === -1) {
+      // If the item is not in the basket, add it with quantity
+      setBasket((prevBasket) => [...prevBasket, { ...item, quantity }]);
+    } else {
+      // If the item is already in the basket, update the quantity
+      setBasket((prevBasket) => {
+        const updatedBasket = [...prevBasket];
+        updatedBasket[itemIndexInBasket].quantity += quantity;
+        return updatedBasket;
+      });
+    }
   };
+  useEffect(() => {
+    console.log(basket);
+  }, [basket]);
 
   return (
     <div className="product-card">
