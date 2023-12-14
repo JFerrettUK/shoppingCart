@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./ProductCard.css";
 
 const ProductCard = ({
+  id,
   name,
   description,
   price,
@@ -33,12 +34,21 @@ const ProductCard = ({
 
   const addToCart = () => {
     const itemIndexInBasket = basket.findIndex(
-      (basketItem) => basketItem.id === item.id
+      (basketItem) => basketItem.id === id
     );
+
+    const newItem = {
+      id, // Include 'id' property
+      name,
+      description,
+      price,
+      imageSource,
+      quantity,
+    };
 
     if (itemIndexInBasket === -1) {
       // If the item is not in the basket, add it with quantity
-      setBasket((prevBasket) => [...prevBasket, { ...item, quantity }]);
+      setBasket((prevBasket) => [...prevBasket, newItem]);
     } else {
       // If the item is already in the basket, update the quantity
       setBasket((prevBasket) => {
@@ -48,9 +58,6 @@ const ProductCard = ({
       });
     }
   };
-  useEffect(() => {
-    console.log(basket);
-  }, [basket]);
 
   return (
     <div className="product-card">

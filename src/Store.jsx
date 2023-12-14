@@ -1,10 +1,9 @@
+/* eslint-disable react/prop-types */
+// Store.jsx
 import Navbar from "./Components/Navbar.jsx";
 import ProductList from "./Components/ProductList.jsx";
-import { useState } from "react";
 
-function Home() {
-  const [basket, setBasket] = useState([]);
-
+function Store({ basket, setBasket }) {
   return (
     <>
       <Navbar />
@@ -13,4 +12,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Store;

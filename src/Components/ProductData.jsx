@@ -6,7 +6,13 @@ const ProductData = () => {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        const productsWithIds = data.map((product, index) => ({
+          ...product,
+          id: index,
+        }));
+        setProducts(productsWithIds);
+      })
       .catch((error) => console.error(error));
   }, []);
 

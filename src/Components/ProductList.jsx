@@ -2,9 +2,17 @@
 import "./ProductList.css";
 import ProductCard from "./ProductCard";
 import ProductData from "./ProductData";
+import { useEffect } from "react";
 
 const ProductList = ({ basket, setBasket }) => {
   const products = ProductData();
+
+  useEffect(() => {
+    console.log("products:");
+    console.log(products);
+    console.log("basket:");
+    console.log(basket);
+  }, [basket, setBasket]);
 
   if (!products || !products.length) {
     return (
@@ -16,9 +24,10 @@ const ProductList = ({ basket, setBasket }) => {
 
   return (
     <div className="product-list">
-      {products.map((product, index) => (
+      {products.map((product) => (
         <ProductCard
-          key={index}
+          key={product.id}
+          id={product.id}
           imageSource={product.image}
           name={product.title}
           description={product.description}
