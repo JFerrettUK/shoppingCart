@@ -14,7 +14,7 @@ const ProductCard = ({
 }) => {
   const [quantity, setQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [item, setItem] = useState({ name, description, price, imageSource });
+  const [isFlashing, setFlashing] = useState(false);
 
   useEffect(() => {
     if (typeof price === "number") {
@@ -33,6 +33,10 @@ const ProductCard = ({
   };
 
   const addToCart = () => {
+    if (quantity == 0) {
+      return;
+    }
+
     const itemIndexInBasket = basket.findIndex(
       (basketItem) => basketItem.id === id
     );
@@ -47,10 +51,8 @@ const ProductCard = ({
     };
 
     if (itemIndexInBasket === -1) {
-      // If the item is not in the basket, add it with quantity
       setBasket((prevBasket) => [...prevBasket, newItem]);
     } else {
-      // If the item is already in the basket, update the quantity
       setBasket((prevBasket) => {
         const updatedBasket = [...prevBasket];
         updatedBasket[itemIndexInBasket].quantity += quantity;
