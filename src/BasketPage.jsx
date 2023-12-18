@@ -73,16 +73,16 @@ function BasketPage({ basket, setBasket }) {
                 <div className="itemButtons">
                   <button
                     className="cartButton"
-                    onClick={() => handleAdd(index)}
-                  >
-                    +
-                  </button>
-                  <button
-                    className="cartButton"
                     onClick={() => handleRemove(index)}
                   >
                     -
                   </button>
+                  <button
+                    className="cartButton"
+                    onClick={() => handleAdd(index)}
+                  >
+                    +
+                  </button>{" "}
                   <button
                     className="cartButton"
                     onClick={() => handleDelete(index)}
