@@ -2,17 +2,9 @@
 import "./ProductList.css";
 import ProductCard from "./ProductCard";
 import ProductData from "./ProductData";
-import { useEffect } from "react";
 
 const ProductList = ({ basket, setBasket }) => {
   const products = ProductData();
-
-  useEffect(() => {
-    console.log("products:");
-    console.log(products);
-    console.log("basket:");
-    console.log(basket);
-  }, [basket, setBasket]);
 
   if (!products || !products.length) {
     return (
